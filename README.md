@@ -1,8 +1,8 @@
 # Billing ANE v1.0.0
 
 PRO Native Extension for Adobe AIR which allows you to use Google Play In-App 
-Billing v3. Purchase and consume operations are support. No support for 
-subscriptions yet. If you need one you can contact developer.
+Billing v3. Purchase and consume operations are supported. There is no support 
+for subscriptions yet. If you need one you can contact developer.
 
 ## Status
 
