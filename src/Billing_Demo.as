@@ -34,6 +34,7 @@ package
 			Billing.getInstance().addEventListener(BillingEvent.INITIALIZATION_SUCCESS, initializationSuccessHandler);
 			Billing.getInstance().addEventListener(BillingEvent.INITIALIZATION_ERROR, initializationErrorHandler);
 			Billing.getInstance().addEventListener(BillingEvent.SERVICE_CONNECTED, serviceConnectedHandler);
+			Billing.getInstance().addEventListener(BillingEvent.SERVICE_DISCONNECTED, serviceDisconnectedHandler);
 			Billing.getInstance().addEventListener(BillingEvent.SKU_DETAILS_SUCCESS, skuDetailsSuccessHandler);
 			Billing.getInstance().addEventListener(BillingEvent.SKU_DETAILS_ERROR, skuDetailsErrorHandler);
 			Billing.getInstance().addEventListener(BillingEvent.PURCHASE_SUCCESS, purchaseSuccessHandler);
@@ -64,6 +65,11 @@ package
 			]);
 		}
 
+		private function serviceDisconnectedHandler(event:BillingEvent):void
+		{
+			_label.text += "\nService was disconnected.";
+		}
+
 		private function skuDetailsSuccessHandler(event:BillingEvent):void
 		{
 			_label.text += "\nProducts details received.";
@@ -86,6 +92,7 @@ package
 		private function purchaseErrorHandler(event:BillingEvent):void
 		{
 			_label.text += "\nPurchase completed with errors.";
+			_label.text += "\n" + event.message;
 		}
 		
 		private function getPurchasesSuccessHandler(event:BillingEvent):void
